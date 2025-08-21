@@ -136,46 +136,54 @@
     </div>
   </div>
 
-  <script>
-    const whatsappNumber = "201063471735";
-    const waGreeting = "سلام عليكم، استلمت طلب جديد من موقع Road King:";
+<script>
+  const whatsappNumber = "201063471735";
+  const waGreeting = "سلام عليكم، استلمت طلب جديد من موقع Road King:";
 
-    function openModal(place=""){ 
-      document.getElementById('orderModal').classList.add('open'); 
-      document.getElementById('orderForm').elements.place.value = place;
-    }
-    function closeModal(){ document.getElementById('orderModal').classList.remove('open'); }
+  function openModal(place=""){ 
+    document.getElementById('orderModal').classList.add('open'); 
+    document.getElementById('orderForm').elements.place.value = place;
+  }
+  function closeModal(){ document.getElementById('orderModal').classList.remove('open'); }
 
-    function handleOrderSubmit(e){
-      e.preventDefault();
-      const f = e.target;
-      const data = {
-        name: f.name.value,
-        phone: f.phone.value,
-        address: f.address.value,
-        place: f.place.value,
-        items: f.items.value,
-        payment: f.payment.value,
-        time: f.time.value
-      };
-      const msg = [
-        waGreeting,"",
-        "الاسم: "+data.name,
-        "الموبايل: "+data.phone,
-        "العنوان: "+data.address,
-        data.place ? "المكان: "+data.place : "",
-        "الطلب: "+data.items,
-        "وقت: "+(data.time||"فوري"),
-        "الدفع: "+data.payment
-      ].join("\n");
-      const link = "https://wa.me/"+whatsappNumber+"?text="+encodeURIComponent(msg);
-      window.open(link,"_blank");
-      closeModal();
-    }
+  function handleOrderSubmit(e){
+    e.preventDefault();
+    const f = e.target;
+    const data = {
+      name: f.name.value,
+      phone: f.phone.value,
+      address: f.address.value,
+      place: f.place.value,
+      items: f.items.value,
+      payment: f.payment.value,
+      time: f.time.value
+    };
+    const msg = [
+      waGreeting,"",
+      "الاسم: "+data.name,
+      "الموبايل: "+data.phone,
+      "العنوان: "+data.address,
+      data.place ? "المكان: "+data.place : "",
+      "الطلب: "+data.items,
+      "وقت: "+(data.time||"فوري"),
+      "الدفع: "+data.payment
+    ].join("\n");
+    const link = "https://wa.me/"+whatsappNumber+"?text="+encodeURIComponent(msg);
+    window.open(link,"_blank");
+    closeModal();
+  }
 
-    document.getElementById("waBtnHero").onclick = e=>{e.preventDefault();openModal()};
-    document.getElementById("openOrderBtn").onclick = e=>{e.preventDefault();openModal()};
-    document.addEventListener('keydown', e=>{if(e.key==='Escape') closeModal()});
-  </script>
+  document.getElementById("waBtnHero").onclick = e=>{e.preventDefault();openModal()};
+  document.getElementById("openOrderBtn").onclick = e=>{e.preventDefault();openModal()};
+  document.addEventListener('keydown', e=>{if(e.key==='Escape') closeModal()});
+
+  // 👇 كود يقرأ place من رابط الصفحة
+  const params = new URLSearchParams(window.location.search);
+  const placeFromURL = params.get("place");
+  if(placeFromURL){
+    openModal(placeFromURL);
+  }
+</script>
+
 </body>
 </html>

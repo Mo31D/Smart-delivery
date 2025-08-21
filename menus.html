@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>المنيوهات | Road King</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--accent:#d35400;--accent-dark:#9b3d00;--muted:#6b6b6b;--card:#fff;--radius:12px;--max-width:1100px;}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:'Cairo',system-ui;background:#f9f9f9;color:#222;line-height:1.6}
+    .wrap{max-width:var(--max-width);margin:auto;padding:16px}
+    header{display:flex;align-items:center;gap:16px;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:8px;text-decoration:none;color:inherit}
+    .brand img{width:48px;height:48px;object-fit:contain;border-radius:8px;background:#fff;padding:4px}
+    .brand h1{margin:0;font-size:18px}
+    .slogan{font-size:12px;color:var(--muted)}
+    .btn{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:10px;text-decoration:none;background:var(--accent);color:#fff;font-weight:600;transition:.12s}
+    .btn.secondary{background:#fff;color:var(--accent-dark);border:1px solid #ddd}
+    .btn:active{transform:translateY(1px)}
+    h2{margin:20px 0 10px}
+    .menus-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+    .menu-card{background:#fff;padding:12px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.04);display:flex;flex-direction:column;gap:8px}
+    .menu-card img{width:100%;height:140px;object-fit:cover;border-radius:8px}
+    .menu-title{display:flex;justify-content:space-between;align-items:center}
+    footer{margin:20px 0;color:var(--muted);font-size:13px;text-align:center}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- Header -->
+    <header>
+      <a class="brand" href="index.html"><img src="logo.jpeg" alt=""><div><h1>Road King</h1><div class="slogan">راجل الزبون</div></div></a>
+      <div style="margin-inline-start:auto">
+        <a class="btn" href="index.html">⬅ رجوع</a>
+      </div>
+    </header>
+
+    <h2>المنيوهات والأماكن المتاحة</h2>
+
+    <div class="menus-grid">
+      <!-- مطاعم -->
+      <article class="menu-card">
+        <img src="Tutuk.png" alt="">
+        <div class="menu-title"><strong>مطعم الفلاح</strong><span>متوسط 60 ج</span></div>
+        <p class="small">شاورما – طواجن – سلطات</p>
+        <a class="btn" href="index.html?place=مطعم الفلاح">اطلب</a>
+      </article>
+
+      <article class="menu-card">
+        <img src="Tutuk.png" alt="">
+        <div class="menu-title"><strong>مطعم الشرقاوي</strong><span>وجبات</span></div>
+        <p class="small">مشويات – فراخ – وجبات عائلية</p>
+        <a class="btn" href="index.html?place=مطعم الشرقاوي">اطلب</a>
+      </article>
+
+      <!-- ماركت -->
+      <article class="menu-card">
+        <img src="Tutuk.png" alt="">
+        <div class="menu-title"><strong>كازيون</strong><span>حسب المنطقة</span></div>
+        <p class="small">منتجات يومية واحتياجات البيت.</p>
+        <a class="btn" href="index.html?place=كازيون">اطلب</a>
+      </article>
+
+      <article class="menu-card">
+        <img src="Tutuk.png" alt="">
+        <div class="menu-title"><strong>بيم ماركت</strong><span>حسب المنطقة</span></div>
+        <p class="small">عروض يومية – منتجات متنوعة</p>
+        <a class="btn" href="index.html?place=بيم ماركت">اطلب</a>
+      </article>
+
+      <!-- صيدليات -->
+      <article class="menu-card">
+        <img src="Tutuk.png" alt="">
+        <div class="menu-title"><strong>صيدلية الشفا</strong><span>دواء</span></div>
+        <p class="small">أدوية ومستحضرات طبية.</p>
+        <a class="btn" href="index.html?place=صيدلية الشفا">اطلب</a>
+      </article>
+
+      <article class="menu-card">
+        <img src="Tutuk.png" alt="">
+        <div class="menu-title"><strong>صيدلية مصر</strong><span>24 ساعة</span></div>
+        <p class="small">خدمة سريعة – أدوية مستعجلة.</p>
+        <a class="btn" href="index.html?place=صيدلية مصر">اطلب</a>
+      </article>
+    </div>
+
+    <footer>
+      © Road King — Smart Delivery — للتواصل واتساب: <strong>+201063471735</strong>
+    </footer>
+  </div>
+</body>
+</html>
